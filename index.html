@@ -1,161 +1,310 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<title>الباقات</title>
+<title>موقعي</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: Arial;
-  background: #0b1220;
-  color: white;
-  text-align: center;
+body{
+margin:0;
+font-family:Arial;
+background:#0b1220;
+color:white;
+transition:0.3s;
+text-align:center;
 }
 
-.section {
-  padding: 80px 20px;
+/* زر الوضع */
+.toggle{
+position:fixed;
+top:15px;
+left:15px;
+background:#38bdf8;
+padding:10px;
+border-radius:10px;
+cursor:pointer;
 }
 
-h1 {
-  margin-bottom: 40px;
+/* نافبار */
+nav{
+display:flex;
+justify-content:center;
+gap:20px;
+background:#020617;
+padding:15px;
 }
 
-/* الحاوية */
-.pricing {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
+nav a{
+color:white;
+text-decoration:none;
 }
 
-/* الكرت */
-.card {
-  background: linear-gradient(145deg, #0f172a, #020617);
-  padding: 30px;
-  border-radius: 20px;
-  width: 260px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
-  transition: 0.3s;
+/* هيرو */
+.hero{
+padding:80px 20px;
 }
 
-.card:hover {
-  transform: translateY(-10px);
+.hero img{
+width:180px;
+animation:float 3s infinite;
 }
 
-/* المميز */
-.card.vip {
-  border: 2px solid gold;
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+100%{transform:translateY(0);}
 }
 
-.card.pro {
-  border: 2px solid #3b82f6;
+/* أعمال */
+.cards{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:20px;
 }
 
-.card.basic {
-  border: 2px solid #22c55e;
+.card{
+background:#1e293b;
+padding:20px;
+border-radius:15px;
+width:250px;
 }
 
-.title {
-  font-size: 24px;
-  margin-bottom: 10px;
+/* الباقات */
+.pricing{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:20px;
 }
 
-.price {
-  font-size: 28px;
-  margin: 15px 0;
+.price-card{
+background:linear-gradient(145deg,#0f172a,#020617);
+padding:25px;
+border-radius:20px;
+width:260px;
+transition:0.3s;
 }
 
-/* المميزات */
-.features {
-  list-style: none;
-  padding: 0;
-  text-align: right;
+.price-card:hover{
+transform:translateY(-10px);
 }
 
-.features li {
-  margin: 10px 0;
+.vip{border:2px solid gold;}
+.pro{border:2px solid #3b82f6;}
+.basic{border:2px solid #22c55e;}
+
+.price{
+font-size:25px;
+margin:10px 0;
 }
 
-/* زر */
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  border-radius: 10px;
-  text-decoration: none;
-  color: black;
+.features{
+list-style:none;
+padding:0;
+text-align:right;
 }
 
-.vip .btn {
-  background: gold;
+.features li{
+margin:10px 0;
 }
 
-.pro .btn {
-  background: #3b82f6;
-  color: white;
+.btn{
+display:inline-block;
+margin-top:15px;
+padding:10px 20px;
+border-radius:10px;
+text-decoration:none;
+color:black;
 }
 
-.basic .btn {
-  background: #22c55e;
+.vip .btn{background:gold;}
+.pro .btn{background:#3b82f6;color:white;}
+.basic .btn{background:#22c55e;}
+
+/* تقييم */
+.reviews{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.review{
+background:#1e293b;
+padding:20px;
+border-radius:10px;
+width:250px;
+}
+
+/* عرض خاص */
+.offer{
+background:#38bdf8;
+color:black;
+padding:20px;
+margin:40px;
+border-radius:15px;
+}
+
+/* واتساب */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+padding:15px;
+border-radius:50%;
+text-decoration:none;
+color:white;
+font-size:20px;
+}
+
+/* مؤشر */
+.cursor{
+width:12px;
+height:12px;
+background:#38bdf8;
+position:fixed;
+border-radius:50%;
+pointer-events:none;
+}
+
+/* لايت مود */
+.light{
+background:white;
+color:black;
 }
 </style>
 </head>
 
 <body>
 
-<div class="section">
-  <h1>💰 الباقات</h1>
+<div class="toggle" onclick="toggleMode()">🌓</div>
+<div class="cursor" id="cursor"></div>
 
-  <div class="pricing">
+<nav>
+<a href="#">الرئيسية</a>
+<a href="#works">أعمالي</a>
+<a href="#pricing">الباقات</a>
+</nav>
 
-    <!-- باقة عادية -->
-    <div class="card basic">
-      <div class="title">🚀 عادية</div>
-      <div class="price">100$</div>
-
-      <ul class="features">
-        <li>✔️ صفحة واحدة</li>
-        <li>✔️ تصميم بسيط</li>
-        <li>✔️ سرعة جيدة</li>
-        <li>✔️ دعم لمدة 3 أيام</li>
-      </ul>
-
-      <a href="#" class="btn">اطلب الآن</a>
-    </div>
-
-    <!-- باقة احترافية -->
-    <div class="card pro">
-      <div class="title">💎 احترافية</div>
-      <div class="price">350$</div>
-
-      <ul class="features">
-        <li>✔️ 5 صفحات</li>
-        <li>✔️ تصميم احترافي</li>
-        <li>✔️ تحسين SEO</li>
-        <li>✔️ دعم لمدة أسبوع</li>
-      </ul>
-
-      <a href="#" class="btn">اطلب الآن</a>
-    </div>
-
-    <!-- باقة VIP -->
-    <div class="card vip">
-      <div class="title">👑 VIP</div>
-      <div class="price">750$</div>
-
-      <ul class="features">
-        <li>✔️ موقع كامل</li>
-        <li>✔️ متجر إلكتروني</li>
-        <li>✔️ سرعة عالية</li>
-        <li>✔️ دعم شهر كامل</li>
-      </ul>
-
-      <a href="#" class="btn">اطلب الآن</a>
-    </div>
-
-  </div>
+<!-- هيرو -->
+<div class="hero">
+<h1>أنا مطور مواقع 💻</h1>
+<p>أصنع مواقع احترافية ومتاجر</p>
+<img src="https://cdn-icons-png.flaticon.com/512/906/906324.png">
 </div>
+
+<!-- من أنا -->
+<h2>من أنا</h2>
+<p>أنا مطور مواقع أساعدك في إنشاء موقع أو متجر احترافي</p>
+
+<!-- أعمال -->
+<section id="works">
+<h2>أعمالي</h2>
+<div class="cards">
+
+<div class="card">
+<h3>متجر إلكتروني</h3>
+<p>نظام طلبات كامل</p>
+</div>
+
+<div class="card">
+<h3>موقع شركة</h3>
+<p>تصميم احترافي</p>
+</div>
+
+<div class="card">
+<h3>موقع شخصي</h3>
+<p>تعريف كامل</p>
+</div>
+
+</div>
+</section>
+
+<!-- عرض -->
+<div class="offer">
+🔥 عرض خاص: خصم 20% هذا الأسبوع
+</div>
+
+<!-- الباقات -->
+<section id="pricing">
+<h2>💰 الباقات</h2>
+
+<div class="pricing">
+
+<div class="price-card basic">
+<h3>🚀 عادية</h3>
+<div class="price">100$</div>
+<ul class="features">
+<li>✔️ صفحة واحدة</li>
+<li>✔️ تصميم بسيط</li>
+<li>✔️ سرعة جيدة</li>
+</ul>
+<a href="#" class="btn">اطلب الآن</a>
+</div>
+
+<div class="price-card pro">
+<h3>💎 احترافية</h3>
+<div class="price">350$</div>
+<ul class="features">
+<li>✔️ 5 صفحات</li>
+<li>✔️ تصميم احترافي</li>
+<li>✔️ SEO</li>
+</ul>
+<a href="#" class="btn">اطلب الآن</a>
+</div>
+
+<div class="price-card vip">
+<h3>👑 VIP</h3>
+<div class="price">750$</div>
+<ul class="features">
+<li>✔️ موقع كامل</li>
+<li>✔️ متجر إلكتروني</li>
+<li>✔️ دعم شهر</li>
+</ul>
+<a href="#" class="btn">اطلب الآن</a>
+</div>
+
+</div>
+</section>
+
+<!-- تقييم -->
+<h2>⭐ آراء العملاء</h2>
+<div class="reviews">
+
+<div class="review">
+<p>⭐⭐⭐⭐⭐</p>
+<p>خدمة رائعة!</p>
+</div>
+
+<div class="review">
+<p>⭐⭐⭐⭐</p>
+<p>تصميم جميل</p>
+</div>
+
+<div class="review">
+<p>⭐⭐⭐⭐⭐</p>
+<p>أنصح به</p>
+</div>
+
+</div>
+
+<!-- واتساب -->
+<a class="whatsapp" href="https://wa.me/2130673757838">💬</a>
+
+<script>
+function toggleMode(){
+document.body.classList.toggle("light");
+}
+
+document.addEventListener("mousemove",e=>{
+let c=document.getElementById("cursor");
+c.style.top=e.clientY+"px";
+c.style.left=e.clientX+"px";
+});
+</script>
 
 </body>
 </html>
