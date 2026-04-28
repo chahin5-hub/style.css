@@ -6,8 +6,8 @@
 
 <style>
 body{
-font-family:Arial;
 margin:0;
+font-family:Arial;
 background:#0b1220;
 color:white;
 text-align:center;
@@ -19,6 +19,7 @@ background:white;
 color:black;
 }
 
+/* Navbar */
 nav{
 background:#020617;
 padding:15px;
@@ -30,14 +31,12 @@ margin:10px;
 text-decoration:none;
 }
 
+/* Hero */
 .hero{
 padding:60px 20px;
 }
 
-.services, .pricing, .reviews{
-padding:40px;
-}
-
+/* Cards */
 .cards{
 display:flex;
 justify-content:center;
@@ -49,22 +48,47 @@ background:#1e293b;
 margin:15px;
 padding:20px;
 border-radius:15px;
-width:250px;
+width:260px;
+transition:0.3s;
 }
 
-.pricing .card{
-border:1px solid #38bdf8;
+.card:hover{
+transform:scale(1.05);
 }
 
-button{
-background:#38bdf8;
+/* Pricing */
+.normal{
+background:linear-gradient(135deg,#1e293b,#334155);
+}
+
+.pro{
+background:linear-gradient(135deg,#0ea5e9,#2563eb);
+}
+
+.vip{
+background:linear-gradient(135deg,#facc15,#eab308,#ca8a04);
+color:black;
+box-shadow:0 0 20px gold;
+}
+
+/* Buttons */
+.order-btn{
+display:inline-block;
+margin-top:10px;
 padding:10px 15px;
-border:none;
+background:black;
+color:white;
 border-radius:10px;
-cursor:pointer;
+text-decoration:none;
 }
 
-/* واتساب */
+/* Reviews */
+.reviews img{
+width:70px;
+border-radius:50%;
+}
+
+/* WhatsApp */
 .whatsapp{
 position:fixed;
 bottom:20px;
@@ -77,18 +101,7 @@ font-size:20px;
 text-decoration:none;
 }
 
-/* زر الطلب */
-.order-btn{
-display:inline-block;
-background:#22c55e;
-padding:10px 20px;
-border-radius:10px;
-text-decoration:none;
-color:white;
-margin-top:10px;
-}
-
-/* مؤشر الفأرة */
+/* Cursor */
 #cursor{
 width:15px;
 height:15px;
@@ -98,12 +111,14 @@ position:fixed;
 pointer-events:none;
 }
 </style>
+
 </head>
 
 <body>
 
 <div id="cursor"></div>
 
+<!-- Navbar -->
 <nav>
 <a href="#">الرئيسية</a>
 <a href="portfolio.html">أعمالي</a>
@@ -111,87 +126,90 @@ pointer-events:none;
 <button onclick="toggleMode()">🌙</button>
 </nav>
 
-<!-- تعريف -->
+<!-- Hero -->
 <section class="hero">
 <h1>👨‍💻 أنا مطور مواقع</h1>
 <p>أساعدك في إنشاء موقع أو متجر احترافي</p>
 </section>
 
-<!-- خدمات -->
-<section class="services">
+<!-- Services -->
+<section>
 <h2>خدماتي</h2>
 <div class="cards">
 
 <div class="card">
-<h3>تطوير مواقع</h3>
+<h3>💻 تطوير مواقع</h3>
 <p>سرعة وأداء عالي</p>
 </div>
 
 <div class="card">
-<h3>متاجر إلكترونية</h3>
+<h3>🛒 متجر إلكتروني</h3>
 <p>نظام طلبات كامل</p>
 </div>
 
 <div class="card">
-<h3>تصميم مواقع</h3>
+<h3>🎨 تصميم مواقع</h3>
 <p>تصميم عصري وجذاب</p>
 </div>
 
 </div>
 </section>
 
-<!-- الباقات -->
-<section class="pricing">
+<!-- Pricing -->
+<section>
 <h2>💰 الباقات</h2>
 
 <div class="cards">
 
-<div class="card">
-<h3>عادية</h3>
+<div class="card normal">
+<h3>🚀 عادية</h3>
 <h2>100$</h2>
-<p>صفحة واحدة</p>
-<p>تصميم بسيط</p>
+<p>✔ صفحة واحدة</p>
+<p>✔ تصميم بسيط</p>
 <a href="order.html" class="order-btn">اطلب الآن</a>
 </div>
 
-<div class="card">
-<h3>احترافية</h3>
+<div class="card pro">
+<h3>💎 احترافية</h3>
 <h2>350$</h2>
-<p>3 صفحات</p>
-<p>تصميم احترافي</p>
-<p>SEO</p>
+<p>✔ 3 صفحات</p>
+<p>✔ تصميم احترافي</p>
+<p>✔ SEO</p>
 <a href="order.html" class="order-btn">اطلب الآن</a>
 </div>
 
-<div class="card">
-<h3>VIP</h3>
+<div class="card vip">
+<h3>👑 VIP</h3>
 <h2>750$</h2>
-<p>موقع كامل</p>
-<p>متجر إلكتروني</p>
-<p>دعم خاص</p>
+<p>🔥 موقع كامل</p>
+<p>🔥 متجر إلكتروني</p>
+<p>🔥 دعم خاص</p>
 <a href="order.html" class="order-btn">اطلب الآن</a>
 </div>
 
 </div>
 </section>
 
-<!-- التقييم -->
+<!-- Reviews -->
 <section class="reviews">
 <h2>⭐ آراء العملاء</h2>
 
 <div class="cards">
 
 <div class="card">
+<img src="https://i.pravatar.cc/100?img=1">
 <p>⭐⭐⭐⭐⭐</p>
-<p>عمل ممتاز 🔥</p>
+<p>خدمة ممتازة 🔥</p>
 </div>
 
 <div class="card">
+<img src="https://i.pravatar.cc/100?img=2">
 <p>⭐⭐⭐⭐</p>
 <p>تصميم رائع</p>
 </div>
 
 <div class="card">
+<img src="https://i.pravatar.cc/100?img=3">
 <p>⭐⭐⭐⭐⭐</p>
 <p>سريع ومحترف</p>
 </div>
@@ -199,8 +217,8 @@ pointer-events:none;
 </div>
 </section>
 
-<!-- زر واتساب -->
-<a class="whatsapp" href="https://wa.me/2130673757838">💬</a>
+<!-- WhatsApp -->
+<a class="whatsapp" href="https://wa.me/213XXXXXXXXX">💬</a>
 
 <script>
 function toggleMode(){
@@ -208,9 +226,9 @@ document.body.classList.toggle("light");
 }
 
 document.addEventListener("mousemove", e=>{
-let c = document.getElementById("cursor");
-c.style.top = e.clientY + "px";
-c.style.left = e.clientX + "px";
+let c=document.getElementById("cursor");
+c.style.top=e.clientY+"px";
+c.style.left=e.clientX+"px";
 });
 </script>
 
