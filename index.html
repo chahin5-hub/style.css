@@ -19,7 +19,6 @@ background:white;
 color:black;
 }
 
-/* Navbar */
 nav{
 background:#020617;
 padding:15px;
@@ -31,12 +30,10 @@ margin:10px;
 text-decoration:none;
 }
 
-/* Hero */
 .hero{
 padding:60px 20px;
 }
 
-/* Cards */
 .cards{
 display:flex;
 justify-content:center;
@@ -56,7 +53,7 @@ transition:0.3s;
 transform:scale(1.05);
 }
 
-/* Pricing */
+/* الباقات */
 .normal{
 background:linear-gradient(135deg,#1e293b,#334155);
 }
@@ -71,7 +68,7 @@ color:black;
 box-shadow:0 0 20px gold;
 }
 
-/* Buttons */
+/* زر */
 .order-btn{
 display:inline-block;
 margin-top:10px;
@@ -82,13 +79,17 @@ border-radius:10px;
 text-decoration:none;
 }
 
-/* Reviews */
+/* صور التقييم */
 .reviews img{
-width:70px;
+width:80px;
+height:80px;
 border-radius:50%;
+object-fit:cover;
+margin-bottom:10px;
+border:3px solid #38bdf8;
 }
 
-/* WhatsApp */
+/* واتساب */
 .whatsapp{
 position:fixed;
 bottom:20px;
@@ -100,25 +101,12 @@ border-radius:50%;
 font-size:20px;
 text-decoration:none;
 }
-
-/* Cursor */
-#cursor{
-width:15px;
-height:15px;
-background:#38bdf8;
-border-radius:50%;
-position:fixed;
-pointer-events:none;
-}
 </style>
 
 </head>
 
 <body>
 
-<div id="cursor"></div>
-
-<!-- Navbar -->
 <nav>
 <a href="#">الرئيسية</a>
 <a href="portfolio.html">أعمالي</a>
@@ -126,36 +114,12 @@ pointer-events:none;
 <button onclick="toggleMode()">🌙</button>
 </nav>
 
-<!-- Hero -->
 <section class="hero">
 <h1>👨‍💻 أنا مطور مواقع</h1>
 <p>أساعدك في إنشاء موقع أو متجر احترافي</p>
 </section>
 
-<!-- Services -->
-<section>
-<h2>خدماتي</h2>
-<div class="cards">
-
-<div class="card">
-<h3>💻 تطوير مواقع</h3>
-<p>سرعة وأداء عالي</p>
-</div>
-
-<div class="card">
-<h3>🛒 متجر إلكتروني</h3>
-<p>نظام طلبات كامل</p>
-</div>
-
-<div class="card">
-<h3>🎨 تصميم مواقع</h3>
-<p>تصميم عصري وجذاب</p>
-</div>
-
-</div>
-</section>
-
-<!-- Pricing -->
+<!-- الباقات -->
 <section>
 <h2>💰 الباقات</h2>
 
@@ -190,46 +154,40 @@ pointer-events:none;
 </div>
 </section>
 
-<!-- Reviews -->
+<!-- التقييم مع صور مبرمجين -->
 <section class="reviews">
 <h2>⭐ آراء العملاء</h2>
 
 <div class="cards">
 
 <div class="card">
-<img src="https://i.pravatar.cc/100?img=1">
+<img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c">
 <p>⭐⭐⭐⭐⭐</p>
-<p>خدمة ممتازة 🔥</p>
+<p>مبرمج محترف وسريع 🔥</p>
 </div>
 
 <div class="card">
-<img src="https://i.pravatar.cc/100?img=2">
-<p>⭐⭐⭐⭐</p>
-<p>تصميم رائع</p>
+<img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c">
+<p>⭐⭐⭐⭐⭐</p>
+<p>تصميم رائع جدًا</p>
 </div>
 
 <div class="card">
-<img src="https://i.pravatar.cc/100?img=3">
+<img src="https://images.unsplash.com/photo-1537432376769-00a6e4d9c5d2">
 <p>⭐⭐⭐⭐⭐</p>
-<p>سريع ومحترف</p>
+<p>خدمة ممتازة واحترافية</p>
 </div>
 
 </div>
 </section>
 
-<!-- WhatsApp -->
+<!-- واتساب -->
 <a class="whatsapp" href="https://wa.me/213XXXXXXXXX">💬</a>
 
 <script>
 function toggleMode(){
 document.body.classList.toggle("light");
 }
-
-document.addEventListener("mousemove", e=>{
-let c=document.getElementById("cursor");
-c.style.top=e.clientY+"px";
-c.style.left=e.clientX+"px";
-});
 </script>
 
 </body>
