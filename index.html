@@ -3,70 +3,160 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<title>موقعي</title>
+<title>الباقات</title>
 
 <style>
 body {
   margin: 0;
   font-family: Arial;
-  background: #0f172a;
+  background: #0b1220;
   color: white;
+  text-align: center;
 }
 
-/* Navbar */
-nav {
+.section {
+  padding: 80px 20px;
+}
+
+h1 {
+  margin-bottom: 40px;
+}
+
+/* الحاوية */
+.pricing {
   display: flex;
   justify-content: center;
-  gap: 30px;
-  background: #020617;
-  padding: 15px;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
+/* الكرت */
+.card {
+  background: linear-gradient(145deg, #0f172a, #020617);
+  padding: 30px;
+  border-radius: 20px;
+  width: 260px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  transition: 0.3s;
 }
 
-/* Hero */
-.hero {
-  text-align: center;
-  padding: 100px 20px;
+.card:hover {
+  transform: translateY(-10px);
 }
 
-.hero h1 span {
-  color: #38bdf8;
+/* المميز */
+.card.vip {
+  border: 2px solid gold;
 }
 
+.card.pro {
+  border: 2px solid #3b82f6;
+}
+
+.card.basic {
+  border: 2px solid #22c55e;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 28px;
+  margin: 15px 0;
+}
+
+/* المميزات */
+.features {
+  list-style: none;
+  padding: 0;
+  text-align: right;
+}
+
+.features li {
+  margin: 10px 0;
+}
+
+/* زر */
 .btn {
+  display: inline-block;
+  margin-top: 20px;
   padding: 10px 20px;
   border-radius: 10px;
   text-decoration: none;
-  margin: 10px;
-  display: inline-block;
+  color: black;
 }
 
-.btn1 { background: #38bdf8; color: black; }
-.btn2 { border: 1px solid #38bdf8; color: #38bdf8; }
+.vip .btn {
+  background: gold;
+}
 
+.pro .btn {
+  background: #3b82f6;
+  color: white;
+}
+
+.basic .btn {
+  background: #22c55e;
+}
 </style>
 </head>
 
 <body>
 
-<nav>
-  <a href="#">الرئيسية</a>
-  <a href="portfolio.html">أعمالي</a>
-  <a href="#">تواصل</a>
-</nav>
+<div class="section">
+  <h1>💰 الباقات</h1>
 
-<div class="hero">
-  <h1>أنا <span>مطور مواقع</span></h1>
-  <p>أبني مواقع احترافية ومتاجر إلكترونية</p>
+  <div class="pricing">
 
-  <a class="btn btn1" href="#">تواصل معي</a>
-  <a class="btn btn2" href="portfolio.html">أعمالي</a>
+    <!-- باقة عادية -->
+    <div class="card basic">
+      <div class="title">🚀 عادية</div>
+      <div class="price">100$</div>
+
+      <ul class="features">
+        <li>✔️ صفحة واحدة</li>
+        <li>✔️ تصميم بسيط</li>
+        <li>✔️ سرعة جيدة</li>
+        <li>✔️ دعم لمدة 3 أيام</li>
+      </ul>
+
+      <a href="#" class="btn">اطلب الآن</a>
+    </div>
+
+    <!-- باقة احترافية -->
+    <div class="card pro">
+      <div class="title">💎 احترافية</div>
+      <div class="price">350$</div>
+
+      <ul class="features">
+        <li>✔️ 5 صفحات</li>
+        <li>✔️ تصميم احترافي</li>
+        <li>✔️ تحسين SEO</li>
+        <li>✔️ دعم لمدة أسبوع</li>
+      </ul>
+
+      <a href="#" class="btn">اطلب الآن</a>
+    </div>
+
+    <!-- باقة VIP -->
+    <div class="card vip">
+      <div class="title">👑 VIP</div>
+      <div class="price">750$</div>
+
+      <ul class="features">
+        <li>✔️ موقع كامل</li>
+        <li>✔️ متجر إلكتروني</li>
+        <li>✔️ سرعة عالية</li>
+        <li>✔️ دعم شهر كامل</li>
+      </ul>
+
+      <a href="#" class="btn">اطلب الآن</a>
+    </div>
+
+  </div>
 </div>
 
 </body>
 </html>
-
