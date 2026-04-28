@@ -1,250 +1,194 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<title>موقعي الشخصي</title>
+<title>موقعي</title>
 
 <style>
-
-body {
-  margin: 0;
-  font-family: Arial;
-  background: #0f172a;
-  color: white;
-  transition: 0.3s;
+body{
+margin:0;
+font-family:Arial;
+background:#0b1220;
+color:white;
+text-align:center;
+transition:0.3s;
 }
 
-.light {
-  background: #f1f5f9;
-  color: black;
+.light{
+background:white;
+color:black;
 }
 
-/* Navbar */
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  background: #020617;
-  padding: 15px;
+nav{
+background:#020617;
+padding:15px;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
+nav a{
+color:white;
+margin:10px;
+text-decoration:none;
 }
 
-/* Hero */
-.hero {
-  text-align: center;
-  padding: 80px 20px;
+.hero{
+padding:60px 20px;
 }
 
-/* Services */
-.services {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 30px;
+.cards{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
 }
 
-.card {
-  background: #1e293b;
-  padding: 20px;
-  border-radius: 15px;
-  width: 200px;
+.card{
+background:#1e293b;
+margin:15px;
+padding:20px;
+border-radius:15px;
+width:260px;
+transition:0.3s;
 }
 
-/* Pricing */
-.pricing {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 40px;
+.card:hover{
+transform:scale(1.05);
 }
 
-.plan {
-  padding: 25px;
-  border-radius: 15px;
-  width: 220px;
-  text-align: center;
+/* الباقات */
+.normal{
+background:linear-gradient(135deg,#1e293b,#334155);
 }
 
-/* VIP */
-.vip {
-  background: linear-gradient(45deg, gold, orange);
-  color: black;
+.pro{
+background:linear-gradient(135deg,#0ea5e9,#2563eb);
 }
 
-/* Pro */
-.pro {
-  background: #1e40af;
+.vip{
+background:linear-gradient(135deg,#facc15,#eab308,#ca8a04);
+color:black;
+box-shadow:0 0 20px gold;
 }
 
-/* Basic */
-.basic {
-  background: #065f46;
+/* زر */
+.order-btn{
+display:inline-block;
+margin-top:10px;
+padding:10px 15px;
+background:black;
+color:white;
+border-radius:10px;
+text-decoration:none;
 }
 
-/* Reviews */
-.reviews {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+/* صور التقييم */
+.reviews img{
+width:80px;
+height:80px;
+border-radius:50%;
+object-fit:cover;
+margin-bottom:10px;
+border:3px solid #38bdf8;
 }
 
-.review {
-  background: #1e293b;
-  padding: 20px;
-  border-radius: 15px;
-  width: 200px;
-  text-align: center;
+/* واتساب */
+.whatsapp{
+position:fixed;
+bottom:20px;
+left:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50%;
+font-size:20px;
+text-decoration:none;
 }
-
-.review img {
-  width: 70px;
-  border-radius: 50%;
-}
-
-/* WhatsApp */
-.whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: green;
-  color: white;
-  padding: 15px;
-  border-radius: 50%;
-  text-decoration: none;
-  font-size: 20px;
-}
-
-/* Cursor */
-.cursor {
-  width: 15px;
-  height: 15px;
-  background: cyan;
-  position: fixed;
-  border-radius: 50%;
-}
-
-/* Programmer animation */
-.coder {
-  position: fixed;
-  bottom: 20px;
-  left: -150px;
-  animation: move 10s linear infinite;
-}
-
-.coder img {
-  width: 100px;
-}
-
-@keyframes move {
-  0% { left: -150px; }
-  50% { left: 50%; transform: translateX(-50%); }
-  100% { left: 110%; }
-}
-
-button {
-  padding: 10px;
-  margin-top: 10px;
-}
-
 </style>
+
 </head>
 
 <body>
 
 <nav>
-  <a href="#">الرئيسية</a>
-  <a href="portfolio.html">أعمالي</a>
-  <button onclick="toggleMode()">🌙</button>
+<a href="#">الرئيسية</a>
+<a href="portfolio.html">أعمالي</a>
+<a href="order.html">اطلب</a>
+<button onclick="toggleMode()">🌙</button>
 </nav>
 
 <section class="hero">
-  <h1>أنا مطور مواقع</h1>
-  <p>أساعدك في إنشاء موقع أو متجر احترافي</p>
+<h1>👨‍💻 أنا مطور مواقع</h1>
+<p>أساعدك في إنشاء موقع أو متجر احترافي</p>
 </section>
 
-<h2 style="text-align:center;">خدماتي</h2>
-<div class="services">
-  <div class="card">تطوير مواقع ⚡</div>
-  <div class="card">متاجر إلكترونية 🛒</div>
-  <div class="card">تصميم احترافي 🎨</div>
+<!-- الباقات -->
+<section>
+<h2>💰 الباقات</h2>
+
+<div class="cards">
+
+<div class="card normal">
+<h3>🚀 عادية</h3>
+<h2>100$</h2>
+<p>✔ صفحة واحدة</p>
+<p>✔ تصميم بسيط</p>
+<a href="order.html" class="order-btn">اطلب الآن</a>
 </div>
 
-<h2 style="text-align:center;">الباقات 💰</h2>
-<div class="pricing">
-
-  <div class="plan basic">
-    <h3>عادية 🚀</h3>
-    <p>100$</p>
-    <p>صفحة واحدة</p>
-    <p>تصميم بسيط</p>
-  </div>
-
-  <div class="plan pro">
-    <h3>احترافية 💎</h3>
-    <p>300$</p>
-    <p>3 صفحات</p>
-    <p>تصميم حديث</p>
-  </div>
-
-  <div class="plan vip">
-    <h3>VIP 👑</h3>
-    <p>750$</p>
-    <p>موقع كامل</p>
-    <p>متجر + SEO</p>
-  </div>
-
+<div class="card pro">
+<h3>💎 احترافية</h3>
+<h2>350$</h2>
+<p>✔ 3 صفحات</p>
+<p>✔ تصميم احترافي</p>
+<p>✔ SEO</p>
+<a href="order.html" class="order-btn">اطلب الآن</a>
 </div>
 
-<h2 style="text-align:center;">آراء العملاء ⭐</h2>
-<div class="reviews">
-
-  <div class="review">
-    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde">
-    <p>⭐⭐⭐⭐⭐</p>
-    <p>عمل رائع</p>
-  </div>
-
-  <div class="review">
-    <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12">
-    <p>⭐⭐⭐⭐</p>
-    <p>تصميم جميل</p>
-  </div>
-
-  <div class="review">
-    <img src="https://images.unsplash.com/photo-1502767089025-6572583495b4">
-    <p>⭐⭐⭐⭐⭐</p>
-    <p>خدمة ممتازة</p>
-  </div>
-
+<div class="card vip">
+<h3>👑 VIP</h3>
+<h2>750$</h2>
+<p>🔥 موقع كامل</p>
+<p>🔥 متجر إلكتروني</p>
+<p>🔥 دعم خاص</p>
+<a href="order.html" class="order-btn">اطلب الآن</a>
 </div>
 
-<!-- WhatsApp -->
-<a class="whatsapp" href="https://wa.me/2130673757838">💬</a>
-
-<!-- Cursor -->
-<div class="cursor" id="cursor"></div>
-
-<!-- Programmer animation -->
-<div class="coder">
-  <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png">
 </div>
+</section>
+
+<!-- التقييم مع صور مبرمجين -->
+<section class="reviews">
+<h2>⭐ آراء العملاء</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c">
+<p>⭐⭐⭐⭐⭐</p>
+<p>مبرمج محترف وسريع 🔥</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c">
+<p>⭐⭐⭐⭐⭐</p>
+<p>تصميم رائع جدًا</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1537432376769-00a6e4d9c5d2">
+<p>⭐⭐⭐⭐⭐</p>
+<p>خدمة ممتازة واحترافية</p>
+</div>
+
+</div>
+</section>
+
+<!-- واتساب -->
+<a class="whatsapp" href="https://wa.me/213XXXXXXXXX">💬</a>
 
 <script>
-
 function toggleMode(){
-  document.body.classList.toggle("light");
+document.body.classList.toggle("light");
 }
-
-document.addEventListener("mousemove", e=>{
-  let c = document.getElementById("cursor");
-  c.style.left = e.clientX + "px";
-  c.style.top = e.clientY + "px";
-});
-
 </script>
 
 </body>
