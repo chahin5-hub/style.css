@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>طلب خدمة</title>
+
+<style>
+body{
+font-family:Arial;
+background:#0b1220;
+color:white;
+text-align:center;
+padding:50px;
+}
+
+form{
+background:#1e293b;
+padding:25px;
+border-radius:15px;
+width:320px;
+margin:auto;
+}
+
+input, select, textarea{
+width:100%;
+padding:10px;
+margin:10px 0;
+border:none;
+border-radius:8px;
+}
+
+button{
+background:#38bdf8;
+padding:10px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+width:100%;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🛒 اطلب موقعك الآن</h1>
+
+<form onsubmit="sendWhatsApp(); return false;">
+
+<input type="text" id="name" placeholder="اسمك" required>
+
+<select id="plan">
+<option value="عادية - 100$">عادية - 100$</option>
+<option value="احترافية - 350$">احترافية - 350$</option>
+<option value="VIP - 750$">VIP - 750$</option>
+</select>
+
+<textarea id="details" placeholder="اكتب تفاصيل مشروعك"></textarea>
+
+<button type="submit">إرسال الطلب</button>
+
+</form>
+
+<br>
+<a href="index.html">⬅️ الرجوع للرئيسية</a>
+
+<script>
+function sendWhatsApp(){
+let name = document.getElementById("name").value;
+let plan = document.getElementById("plan").value;
+let details = document.getElementById("details").value;
+
+let message = `طلب جديد:%0Aالاسم: ${name}%0Aالباقة: ${plan}%0Aالتفاصيل: ${details}`;
+
+window.open(`https://wa.me/213XXXXXXXXX?text=${message}`, '_blank');
+}
+</script>
+
+</body>
+</html>
